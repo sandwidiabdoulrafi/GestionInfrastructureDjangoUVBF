@@ -1,0 +1,52 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="Page-1" id="-mZbdRDEz2WhvEpJLTff">
+    <mxGraphModel dx="926" dy="1729" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="FA6A5tUeGjfwHgSJ819P-8" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;b&gt;9- Canevas du rapport - Système de suivi des infrastructures publiques&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="440" y="-220" width="310" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="FA6A5tUeGjfwHgSJ819P-10" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Diagramme de cas d&#39;utilisation&amp;nbsp;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="-60" width="265" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FA6A5tUeGjfwHgSJ819P-13" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Citoyen&lt;/font&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="109" y="140" width="90" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="FA6A5tUeGjfwHgSJ819P-14" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Adminitration&lt;/font&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="109" y="480" width="90" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="FA6A5tUeGjfwHgSJ819P-16" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;page de gestion des infrastructure administratif&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="110" width="460" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="FA6A5tUeGjfwHgSJ819P-19" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;signaler un infrastructure&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="FA6A5tUeGjfwHgSJ819P-16">
+          <mxGeometry x="76" y="60" width="144" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FA6A5tUeGjfwHgSJ819P-20" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;voire&amp;nbsp; signalement&amp;nbsp;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="FA6A5tUeGjfwHgSJ819P-16">
+          <mxGeometry x="76" y="220" width="144" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FA6A5tUeGjfwHgSJ819P-25" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;traiter&amp;nbsp; signalement&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="FA6A5tUeGjfwHgSJ819P-16">
+          <mxGeometry x="76" y="420" width="144" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FA6A5tUeGjfwHgSJ819P-23" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="FA6A5tUeGjfwHgSJ819P-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="550" as="sourcePoint" />
+            <mxPoint x="249" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FA6A5tUeGjfwHgSJ819P-24" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" target="FA6A5tUeGjfwHgSJ819P-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="199" y="215" as="sourcePoint" />
+            <mxPoint x="491" y="325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FA6A5tUeGjfwHgSJ819P-26" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="FA6A5tUeGjfwHgSJ819P-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="199" y="550" as="sourcePoint" />
+            <mxPoint x="489" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
