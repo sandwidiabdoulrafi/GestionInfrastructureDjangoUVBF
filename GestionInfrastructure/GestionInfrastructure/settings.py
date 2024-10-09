@@ -28,6 +28,13 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# Configuration des cookies de session
+SESSION_COOKIE_NAME = 'sessionid'  # Nom du cookie
+SESSION_COOKIE_HTTPONLY = True       # Protège le cookie contre les accès JavaScript
+SESSION_COOKIE_SECURE = False        # Définissez sur True en production pour HTTPS
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # Expire la session lorsque le navigateur est fermé
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AppGestionInfrastructure',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
