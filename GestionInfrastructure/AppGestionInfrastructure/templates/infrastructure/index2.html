@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration des Infrastructures Publiques</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Couleurs personnalisées */
+        :root {
+            --main-bg-color: #121212; /* Fond noir */
+            --main-text-color: #00FF00; /* Texte vert */
+            --btn-bg-color: #007bff; /* Couleur des boutons */
+            --btn-hover-color: #0056b3; /* Couleur des boutons au survol */
+            --shadow-color: rgba(0, 255, 0, 0.5); /* Ombre verte */
+            --header-bg-color: #1a1a1a; /* Couleur de l'en-tête */
+            --table-header-bg-color: #1f1f1f; /* Couleur d'arrière-plan des en-têtes de table */
+            --table-border-color: #00FF00; /* Couleur des bordures de table */
+        }
+
+        body {
+            background-color: var(--main-bg-color);
+            color: var(--main-text-color);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .glass-effect {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px var(--shadow-color);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid var(--table-border-color);
+        }
+
+        .jumbotron {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 25px;
+            color: white;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn-custom {
+            border-radius: 25px;
+            background-color: var(--btn-bg-color);
+            border: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: var(--btn-hover-color);
+            box-shadow: 0 8px 15px var(--shadow-color);
+        }
+
+        .table {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
+        .table th {
+            background-color: var(--table-header-bg-color);
+            color: var(--main-text-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand text-white" href="#">Administration Infrastructures</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#gestion-infrastructures"><i class="fas fa-building"></i> Gestion des Infrastructures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#signalements"><i class="fas fa-exclamation-triangle"></i> Signalements</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#interventions"><i class="fas fa-tools"></i> Interventions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#deconnexion"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Section Introduction -->
+    <div class="container jumbotron mt-5">
+        <h1 class="display-4">Tableau de Bord Administratif</h1>
+        <p class="lead">Gérez les infrastructures et les signalements de manière efficace.</p>
+    </div>
+
+    <!-- Gestion des Infrastructures -->
+    <div class="container glass-effect" id="gestion-infrastructures">
+        <h2>Gestion des Infrastructures</h2>
+        <form>
+            <div class="form-group">
+                <label for="infrastructure">Nom de l'Infrastructure</label>
+                <input type="text" class="form-control" id="infrastructure" placeholder="Entrez le nom de l'infrastructure" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Localisation</label>
+                <input type="text" class="form-control" id="location" placeholder="Entrez l'adresse ou l'emplacement" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Statut</label>
+                <select class="form-control" id="status" required>
+                    <option value="">Sélectionnez un statut</option>
+                    <option value="ouvert">Ouvert</option>
+                    <option value="ferme">Fermé</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-custom">Ajouter Infrastructure</button>
+        </form>
+    </div>
+
+    <!-- Liste des Signalements -->
+    <div class="container glass-effect" id="signalements">
+        <h2>Liste des Signalements</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nom de l'Infrastructure</th>
+                    <th>Localisation</th>
+                    <th>Description</th>
+                    <th>Date de Signalement</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>École Publique</td>
+                    <td>Centre ville, Ouagadougou</td>
+                    <td>Fissures sur les murs</td>
+                    <td>05/05/2024</td>
+                    <td><button class="btn btn-custom">Voir Détails</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Éclairage public</td>
+                    <td>Rue des Fleurs, Ville X</td>
+                    <td>Lampe HS</td>
+                    <td>10/04/2024</td>
+                    <td><button class="btn btn-custom">Voir Détails</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Pont des Amis</td>
+                    <td>Ville Z</td>
+                    <td>Défaut de signalisation</td>
+                    <td>12/03/2024</td>
+                    <td><button class="btn btn-custom">Voir Détails</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Interventions -->
+    <div class="container glass-effect" id="interventions">
+        <h2>Suivi des Interventions</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Infrastructure</th>
+                    <th>Technicien</th>
+                    <th>Statut</th>
+                    <th>Date d'Intervention</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>École Publique</td>
+                    <td>Technicien 1</td>
+                    <td>En cours</td>
+                    <td>15/10/2024</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Éclairage public</td>
+                    <td>Technicien 2</td>
+                    <td>Terminé</td>
+                    <td>10/10/2024</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Pont des Amis</td>
+                    <td>Technicien 3</td>
+                    <td>À planifier</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Section Déconnexion -->
+    <div class="container glass-effect" id="deconnexion">
+        <h2>Déconnexion</h2>
+        <p>Vous êtes sur le point de vous déconnecter. Êtes-vous sûr ?

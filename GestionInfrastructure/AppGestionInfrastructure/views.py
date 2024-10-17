@@ -175,7 +175,7 @@ def loginAdministration(request):
 
 
         else: 
-            return  Response({'message': "l'utilisateur n'existe pas qu'il s'inscription"}, status=201)
+            return  Response({'message': "Vous avez pas de compte Merci de bien vouloir créer un."}, status=201)
 
 
 
@@ -374,7 +374,7 @@ def getAllInfrastructureWithIntevensionDate(request):
 
         print("-----------------infrastructuresSerialiser.data-------::::::", infrastructuresSerialiser.data)
 
-        return JsonResponse({'data':infrastructuresSerialiser.data}, safe=False, status=201)
+        return JsonResponse({'Data':infrastructuresSerialiser.data}, safe=False, status=201)
 
 
 

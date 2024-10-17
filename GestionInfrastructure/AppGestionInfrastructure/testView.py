@@ -293,10 +293,10 @@ import requests
 
 # # #-------------------------citoyen enregistrer un infrastructure-------------------------------------
 
-# # L'endpoint pour obtenir tous les utilisateurs
+
 # endpoint = "http://127.0.0.1:8000/infratructure/CitizenSaveInfrastruct/"
 
-# # D'abord, connectez-vous pour créer une session
+
 
 
 

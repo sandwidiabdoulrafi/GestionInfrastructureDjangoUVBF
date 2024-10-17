@@ -1,11 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Suivi des Infrastructures Publiques</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px;
+        }
+
+        
+        .jumbotron {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            border-radius: 25px;
+            color:rgb(4, 235, 61);
+
+            font-weight: 1000;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        
+        .btn {
+            border-radius: 25px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand{
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        .table {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        body {
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+        }
+
+        
+        .container {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h3>index</h3>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Suivi Infrastructures</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#signalement">Signaler une Infrastructure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#liste-infrastructures">Voir les Infrastructures Ouvertes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#login">Connexion Administration</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Section Introduction -->
+    <div class="container jumbotron mt-5 ">
+        <h1 class="display-4">Bienvenue sur le Système de Suivi des Infrastructures Publiques</h1>
+        <p class="lead">Signalez facilement les pannes d'infrastructures dans votre ville pour améliorer les services publics.</p>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="#signalement" role="button">Signaler une Infrastructure</a>
+    </div>
+
+    <!-- Formulaire de Signalement avec effet vitre -->
+    <div class="container glass-effect" id="signalement">
+        <h2>Signaler une Infrastructure Défectueuse</h2>
+        <form action="">
+            <div class="form-group">
+                <label for="infrastructure">Nom de l'Infrastructure</label>
+                <input type="text" class="form-control" id="name" >
+            </div>
+            <div class="form-group">
+                <label for="location">Localisation</label>
+                <input type="text" class="form-control" id="location" name="location" placeholder="Entrez l'adresse ou l'emplacement">
+            </div>
+            <div class="form-group">
+                <label for="description">Description du Problème</label>
+                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Décrivez la panne ou le problème"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="etat">État</label>
+                <select class="form-control" id="etat" name="etat">
+                    <option value="Urgent">Urgent</option>
+                    <option value="Passable">Passable</option>
+                    <option value="Non-prioritaire">Non-prioritaire</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="DateEnrg">Date d'Enregistrement</label>
+                <input type="date" class="form-control" id="DateEnrg" name="DateEnrg">
+            </div>
+            <button type="submit" name="addNew" id="addNew" class="btn btn-primary">Soumettre le Signalement</button>
+        </form>
+    </div>
+
+    
+    <div class="container glass-effect" id="liste-infrastructures">
+        <h2>Infrastructures Non valider </h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Type d'Infrastructure</th>
+                    <th>Localisation</th>
+                    <th>Description</th>
+                    <th>État</th>
+                    <th>Date d'Enregistrement</th>
+                </tr>
+            </thead>
+            <tbody class="listsInfrastuctSave">
+                <tr>
+                    <td class="numList" value="1">1</td>
+                    <td>École Publique</td>
+                    <td>Centre ville, Ouagadougou</td>
+                    <td>Manque de voiture</td>
+                    <td>Urgent</td>
+                    <td>05/05/2024</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container glass-effect" id="liste-infrastructuresProgramer">
+        <h2 class="d-flex justify-content-between">Infrastructures Progammés <button class="btn btn-primary addIntervention" >Rafrachir</button> </h2>
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Type d'Infrastructure</th>
+                    <th>Localisation</th>
+                    <th>Description</th>
+                    <th>État</th>
+                    <th>Date d'Enregistrement</th>
+                    <th>Date d'intervension</th>
+                </tr>
+            </thead>
+            <tbody class="infrastructuresProgramer">
+                
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container glass-effect" id="login">
+        <h2>Connexion Administration</h2>
+        <form>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Entrez votre email">
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de Passe</label>
+                <input type="password" class="form-control"name="password" id="password" placeholder="Entrez votre mot de passe">
+            </div>
+            <button type="submit" id="connexion" class="btn btn-primary">Se Connecter</button>
+        </form>
+    </div>
+
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">Système de Suivi des Infrastructures Publiques &copy; 2024</span>
+        </div>
+    </footer>
+    <script src="./index.js">
+
+    </script>
 </body>
 </html>
