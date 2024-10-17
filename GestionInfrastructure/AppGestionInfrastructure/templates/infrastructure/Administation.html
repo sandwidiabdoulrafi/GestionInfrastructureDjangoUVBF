@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi des Infrastructures Publiques</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px;
+        }
+
+        .jumbotron {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            border-radius: 25px;
+            color: rgb(4, 235, 61);
+            font-weight: 1000;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .btn {
+            border-radius: 25px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .table {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between ">
+        <a class="navbar-brand" href="#">Suivi Infrastructures</a>
+        <button id="deconnexion" class="btn btn-primary "> Déonnexion</button>
+        
+    </nav>
+
+    <!-- Section Introduction -->
+    <div class="container jumbotron mt-5">
+        <h1 class="display-4">Bienvenue sur le Système de Suivi des Infrastructures Publiques</h1>
+        <p class="lead">Signalez facilement les pannes d'infrastructures dans votre ville pour améliorer les services publics.</p>
+        <hr class="my-4">
+        
+    </div>
+
+    
+
+    <!-- Infrastructures Non Validées -->
+    <div class="container glass-effect " id="liste-infrastructures">
+        <div class="d-flex justify-content-between ">
+            <h2>Infrastructures Non Validées </h2>
+            <button id="DateNonPlanifie" class="btn btn-primary "> Rafraichir</button>
+        </div>
+        
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Type d'Infrastructure</th>
+                    <th>Localisation</th>
+                    <th>Description</th>
+                    <th>État</th>
+                    <th>Date d'Enregistrement</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="listsInfrastuctNoNplanifier">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Infrastructures Planifiées -->
+    <div class="container glass-effect" id="liste-infrastructuresProgramer">
+        <div class="d-flex justify-content-between ">
+            <h2>Infrastructures Planifiées</h2>
+            <button id="refreshlisplanifier" class="btn btn-primary "> Rafraichir</button>
+        </div>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Type d'Infrastructure</th>
+                    <th>Localisation</th>
+                    <th>Description</th>
+                    <th>État</th>
+                    <th>Date d'Enregistrement</th>
+                    <th>Date de Planification</th>
+                    <th>Administrateur</th>
+                </tr>
+            </thead>
+            <tbody class="infrastructuresProgramer">
+                
+            </tbody>
+        </table>
+    </div>
+
+    
+
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">Système de Suivi des Infrastructures Publiques &copy; 2024</span>
+        </div>
+    </footer>
+    
+    <!-- Script JS -->
+    <script src="./Administration.js">
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

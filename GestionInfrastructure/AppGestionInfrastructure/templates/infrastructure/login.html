@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Suivi des Infrastructures Publiques</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px;
+            max-width: 500px;
+            margin: auto; 
+        }
+
+        .jumbotron {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            border-radius: 25px;
+            color: rgb(4, 235, 61);
+            font-weight: 1000;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .btn {
+            border-radius: 25px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        body {
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between ">
+        <a class="navbar-brand" href="#">Suivi Infrastructures</a>
+        <a href="./index.html" ><button class="btn btn-primary"> Connexion</button></a>
+        
+    </nav>
+
+    <div class="container glass-effect mt-5" id="inscription">
+        <h2>Inscription</h2>
+        <form>
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" class="form-control" id="prenom" placeholder="Entrez votre prénom" required>
+            </div>
+            <div class="form-group">
+                <label for="tel">Numero de téléphone</label>
+                <input type="text" class="form-control" id="tel" placeholder="Entrez votre numero de téléphone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Adresse E-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="Entrez votre adresse e-mail" required>
+            </div>
+            <div class="form-group">
+                <label for="motdepasse">Mot de Passe</label>
+                <input type="password" class="form-control" id="motdepasse" placeholder="Entrez votre mot de passe" required>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button id="btnSubmit" class="btn btn-primary">S'inscrire</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="./login.js"> </script>
+</body>

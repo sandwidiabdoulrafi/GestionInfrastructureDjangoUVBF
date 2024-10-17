@@ -241,99 +241,10 @@ addIntervention.addEventListener('click', function (event){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         })
         .catch(error => console.error('Error:', error));
 
-
-
-
-
-
-        // const newTr = document.createElement('tr');
-        
-        // const positionTD = document.createElement('td');
-        // const descriptionTD = document.createElement('td');
-        // const stateTD = document.createElement('td');
-        // const nameInfrastTD = document.createElement('td');
-        // const dateSaveTD = document.createElement('td');
-        // const stateNuberListe = document.createElement('td');
-        // const interDateTD = document.createElement('td');
-
-
-
-
-
-        // // on va maper les information
-
-
-
-        // if(its[1] === 'Urgent'){
-        //     stateTD.style.backgroundColor = 'red';
-        //     stateTD.style.color = 'white';
-
-        // }else if(its[1] === 'Passable'){
-        //     stateTD.style.backgroundColor = 'yellow';
-        //     stateTD.style.color = 'black';
-            
-        // }else if(its[1].trim() === 'Non-prioritaire'){
-        //     stateTD.style.backgroundColor = 'green';
-        //     stateTD.style.color = 'black';
-        // }
-
-
-        // newTr.appendChild(stateNuberListe)
-        // newTr.appendChild(nameInfrastTD);
-        // newTr.appendChild(positionTD);
-        // newTr.appendChild(descriptionTD);
-        // newTr.appendChild(stateTD);
-        // newTr.appendChild(dateSaveTD);
-        // newTr.appendChild(interDateTD);
-        
-        
-        // infrastructuresProgramer.appendChild(newTr)
-
-
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -358,7 +269,8 @@ btnConnection.addEventListener('click', function (event){
         fetch('http://127.0.0.1:8000/infratructure/Login/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
             },
             body: JSON.stringify({
                 data: connexionData 
@@ -367,6 +279,10 @@ btnConnection.addEventListener('click', function (event){
         .then(response => response.json())
         .then(data =>{
             alert(data.message);
+            
+            localStorage.setItem('isLoggedIn', 'true');
+
+            window.location.href = 'main.html';
 
 
             email.value= '';
